@@ -3,8 +3,7 @@ $(document).ready(function () {
 var gifs = ["Halo" , "Super Mario" , "Yoshi" , "Final Fantasy", "Pokemon"];
 
 
-function test(){
-    console.log("test")
+function displayGif(){
 
     // make gif = to whatever button was pushed
     var gif = $(this).attr("data-name");
@@ -39,7 +38,7 @@ function test(){
                     gifDiv.append(gifImage);
 
                     // Prepending the gifDiv to the "#gif-view" div in the HTML
-                    $("#gif-view").prepend(gifDiv);
+                    $("#gif-view").append(gifDiv);
 
 
                 }//end appropriate rating check
@@ -82,7 +81,7 @@ $("#add-gif").on("click", function(event) {
 
 
 //event listener on all buttons with the class gif-btn
-$(document).on("click", ".gif-btn", test);
+$(document).on("click", ".gif-btn", displayGif);
 
 //render Initial buttons 
 renderButtons();
