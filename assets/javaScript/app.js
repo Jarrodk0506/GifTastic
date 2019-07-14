@@ -38,7 +38,7 @@ function displayGif(){
                     gifDiv.append(gifImage);
 
                     // Prepending the gifDiv to the "#gif-view" div in the HTML
-                    $("#gif-view").append(gifDiv);
+                    $("#gif-view").prepend(gifDiv);
 
 
                 }//end appropriate rating check
