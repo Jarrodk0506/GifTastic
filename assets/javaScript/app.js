@@ -3,8 +3,21 @@ $(document).ready(function () {
 var gifs = ["Halo" , "Super Mario" , "Yoshi" , "Final Fantasy", "Pokemon"];
 
 
+////////////////////////////////
+//          Needs Work        //
+//-Get gifs to go accross the //
+// screen instead of down     //
+//                            //         
+//-Gifs pause and start       //
+//                            //
+//-Styling                    //
+////////////////////////////////
+
+
+
 function displayGif(){
 
+    $("#gif-view").empty();
     // make gif = to whatever button was pushed
     var gif = $(this).attr("data-name");
 
@@ -24,17 +37,10 @@ function displayGif(){
                     //create a div for the gif
                     var gifDiv = $("<div>");
 
-                    //variable to hold the rating
-                    var rating = results[i].rating;
-
-                    // Creating a paragraph tag with the result item's rating
-                    var p = $("<p>").text("Rating: " + rating);
-
                     // Creating an image tag and give it a src attribute of a proprty pulled off the result
                     var gifImage = $("<img>").attr("src", results[i].images.fixed_height.url);
 
-                    //appending the rating and image to the gifDiv
-                    gifDiv.append(p);
+                    //appending the image to the gifDiv
                     gifDiv.append(gifImage);
 
                     // Prepending the gifDiv to the "#gif-view" div in the HTML
