@@ -34,21 +34,19 @@ function displayGif(){
           .then(function(response) {
             var results = response.data;
 
+            
             for (var i = 0; i < results.length; i++) {
                 if (results[i].rating !== "r" ) {
                     //create a div for the gif
                     var gifDiv = $("<div>");
 
                     // Creating an image tag and give it a src attribute of a proprty pulled off the result
-                    var gifImageStill = $("<img>").attr("src", results[i].images.fixed_height_still.url);
-                    gifImageStill.attr("data-state", "still");
-
-                    var gifImageAnimate = $("<img>").attr("src", results[i].images.fixed_height.url);
-                    gifImageAnimate.attr("data-state", "animate");
 
                     var gifImage = $("<img>").attr("src", results[i].images.fixed_height_still.url);
                     gifImage.attr("class", "gifImage");
                     gifImage.attr("data-state", "still")
+                    gifImage.attr("data-stillUrl", results[i].images.fixed_height_still.url);
+                    gifImage.attr("data-animateUrl", results[i].images.fixed_height.url);
 
                     //appending the image to the gifDiv
                     gifDiv.append(gifImage);
@@ -67,10 +65,13 @@ function displayGif(){
                 if(state === "still"){
                     console.log(this);
                     $(this).attr("data-state", "animate");
+                    $(this).attr("src", $(this).attr("data-animateUrl"))
+                    
                 }
                 else if(state === "animate"){
                     console.log(this);
                     $(this).attr("data-state", "still");
+                    $(this).attr("src", $(this).attr("data-stillUrl"))
                 }
 
             });
