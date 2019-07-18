@@ -1,1 +1,1 @@
-# GifTastic
+A gif search bar. Press the gif to Pause and Play. Find whatever gif you desire by typing it in and click the button!
