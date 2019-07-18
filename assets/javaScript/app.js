@@ -3,19 +3,6 @@ $(document).ready(function () {
 var gifs = ["Borderlands" , "Super Mario" , "Yoshi" , "Final Fantasy", "Pokemon"];
 
 
-////////////////////////////////
-//          Needs Work        //
-//-Get gifs to go accross the //
-// screen instead of down     //
-//                            //         
-//-Gifs pause and start       //
-//                            //
-//-Styling                    //
-////////////////////////////////
-
-
-
-
 
 function displayGif(){
 
